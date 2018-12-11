@@ -15,7 +15,6 @@ const handlePostPlay = function(req, res) {
     name,
     winStatus,
   });
-
   res.json({
     name,
     winStatus,
@@ -24,16 +23,8 @@ const handlePostPlay = function(req, res) {
 };
 
 const handleFetchLeaderboard = function(req, res) {
-  //
-  // TODO
-  //
-  res.json([{
-    name: 'Not a real player',
-    wins: 1000,
-    losses: 0,
-    ties: 0,
-    winPercentage: '100.00',
-  }]);
+  const resp = leaderboard.getLeaderBoard();
+  res.json(resp);
 };
 
 module.exports = {
